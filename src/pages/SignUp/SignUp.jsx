@@ -23,6 +23,14 @@ const SignUp = () => {
       setError("Password must be 6 character")
       return;
     }
+    if(!name){
+      setError("must have display name")
+      return;
+    }
+    if(!photo){
+      setError("must have display photo url")
+      return;
+    }
   };
   //google popup
   const handlerGoogle=()=>{
