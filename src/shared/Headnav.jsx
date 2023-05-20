@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { authContext } from "../provider/Authprovider";
 
 const Headnav = () => {
-  const {name}=useContext(authContext)
-  console.log(name)
+  const {user}=useContext(authContext)
+  console.log(user)
   const links = (
     <>
       <li>

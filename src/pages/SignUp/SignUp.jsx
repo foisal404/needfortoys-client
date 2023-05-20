@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { authContext } from "../../provider/Authprovider";
 
 const SignUp = () => {
+  const {GoogleUp}=useContext(authContext)
+  //form control
   const handlerBtn = (event) => {
     event.preventDefault();
     const form=event.target;
@@ -10,6 +14,17 @@ const SignUp = () => {
     const photo=form.photo.value;
     console.log(name,email,password,photo)
   };
+  //google popup
+  const handlerGoogle=()=>{
+    // console.log("google popup")
+    GoogleUp()
+    .then(()=>{
+      console.log("sign in success")
+    })
+    .catch(error=>{
+      console.error(error.messgae);
+    })
+  }
   return (
     <div>
       <div className="hero min-h-[90vh] bg-base-200">
@@ -76,7 +91,7 @@ const SignUp = () => {
             </form>
             <div className="flex flex-col  card-body pt-0">
               <div className="divider">or</div>
-              <button className="btn btn-ghost ">G Login</button>
+              <button className="btn btn-ghost " onClick={handlerGoogle}>G Login</button>
             </div>
           </div>
         </div>
