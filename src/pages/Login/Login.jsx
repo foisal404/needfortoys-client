@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { authContext } from "../../provider/Authprovider";
 
 const Login = () => {
-  const { GoogleUp } = useContext(authContext);
+  const { GoogleUp,signIn } = useContext(authContext);
   const [error,setError]=useState("")
   //form control
   const handlerBtn = (event) => {
@@ -21,6 +21,16 @@ const Login = () => {
       return;
     }
     console.log(email, password);
+    signIn(email,password)
+    .then(result=>{
+      const loggeduser=result.user;
+      console.log(loggeduser)
+    })
+    .catch(error=>{
+      const message=error.message.slice(22,38);
+      console.error(message);
+      setError(message);
+    })
   };
   //Google popup
   const handlerGoogle = () => {
