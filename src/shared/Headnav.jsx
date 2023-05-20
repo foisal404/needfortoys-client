@@ -3,12 +3,20 @@ import { Link } from "react-router-dom";
 import { authContext } from "../provider/Authprovider";
 
 const Headnav = () => {
-  const {user}=useContext(authContext)
-  console.log(user)
+  const { user } = useContext(authContext);
+  console.log(user && user);
   const links = (
     <>
       <li>
         <Link to="/">Home</Link>
+        <Link to="/">All Toys</Link>
+        <Link to="/">Blogs</Link>
+        {
+          user&& <>
+            <Link  to="/">My Toys </Link>
+            <Link  to="/">Add A Toy</Link>
+          </>
+        }
       </li>
     </>
   );
@@ -37,7 +45,7 @@ const Headnav = () => {
               tabIndex={0}
               className="menu menu-compact dropdown-content mt-3 p-2 shadow  bg-neutral text-neutral-content rounded-box w-52"
             >
-                {links}
+              {links}
             </ul>
           </div>
           <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
@@ -46,7 +54,19 @@ const Headnav = () => {
           <ul className="menu menu-horizontal px-1"> {links}</ul>
         </div>
         <div className="navbar-end">
-          <Link className="btn" to='/login'>Login</Link>
+          {user ? (
+            <div className="tooltip tooltip tooltip-bottom" data-tip={`${user?.displayName}`}>
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full">
+                  <img src={user?.photoURL} />
+                </div>
+              </label>
+            </div>
+          ) : (
+            <Link className="btn" to="/login">
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </div>
