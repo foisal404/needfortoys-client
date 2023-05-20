@@ -1,11 +1,13 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { authContext } from "../../provider/Authprovider";
 
 const SignUp = () => {
+  const [error,setError]=useState("")
   const {GoogleUp}=useContext(authContext)
   //form control
   const handlerBtn = (event) => {
+    setError('')
     event.preventDefault();
     const form=event.target;
     const name=form.name.value;
@@ -13,9 +15,18 @@ const SignUp = () => {
     const password=form.password.value;
     const photo=form.photo.value;
     console.log(name,email,password,photo)
+    if(!email){
+      setError("must have email address")
+      return
+    }
+    if(password.length<6){
+      setError("Password must be 6 character")
+      return;
+    }
   };
   //google popup
   const handlerGoogle=()=>{
+    setError('')
     // console.log("google popup")
     GoogleUp()
     .then(()=>{
@@ -31,6 +42,7 @@ const SignUp = () => {
         <div className="hero-content  flex-col lg:flex-row w-full justify-evenly">
           <div className="text-center lg:text-left ">
             <h1 className="text-5xl font-bold my-6">Please Sign Up</h1>
+            <h2 className="text-red-600 text-center">{error&& error}</h2>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form className="card-body" onSubmit={handlerBtn}>
