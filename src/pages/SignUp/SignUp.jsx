@@ -7,13 +7,14 @@ const SignUp = () => {
     const name=form.name.value;
     const email=form.email.value;
     const password=form.password.value;
-    console.log(name,email,password)
+    const photo=form.photo.value;
+    console.log(name,email,password,photo)
   };
   return (
     <div>
       <div className="hero min-h-[90vh] bg-base-200">
-        <div className="hero-content  flex-col ">
-          <div className="text-center lg:text-left">
+        <div className="hero-content  flex-col lg:flex-row w-full justify-evenly">
+          <div className="text-center lg:text-left ">
             <h1 className="text-5xl font-bold my-6">Please Sign Up</h1>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -50,6 +51,17 @@ const SignUp = () => {
                   name="password"
                   className="input input-bordered"
                 />
+                <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Photo Url</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="photo"
+                  name="photo"
+                  className="input input-bordered"
+                />
+              </div>
                 <label className="label">
                   <Link to="/login" className="label-text-alt link link-hover">
                     New Here? go <span className="text-orange-600">Login</span>
