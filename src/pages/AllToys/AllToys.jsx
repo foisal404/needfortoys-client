@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const AllToys = () => {
   const loader = useLoaderData();
@@ -13,8 +13,9 @@ const AllToys = () => {
           <thead>
             <tr>
               <th>About</th>
-              <th>types</th>
-              <th>Rating</th>
+              <th>Sub-category</th>
+              <th>Price</th>
+              <th>Available Quantity</th>
               <th>details</th>
             </tr>
           </thead>
@@ -24,30 +25,25 @@ const AllToys = () => {
                 <tr key={toy._id}>
                   <td>
                     <div className="flex items-center space-x-3">
-                      <div className="avatar">
-                        <div className="mask mask-squircle w-20 h-20  lg:w-40 lg:h-40">
-                          <img
-                            src={toy.picture}
-                            alt="Avatar Tailwind CSS Component"
-                          />
-                        </div>
-                      </div>
+                      
                       <div className="hidden md:block">
-                        <div className="font-bold">{toy.name}</div>
+                        <div className="font-bold">{toy?.name }</div>
+                        <div >Seller :{toy?.seller_name && toy?.seller_name }</div>
                         <div className="text-sm opacity-50"></div>
                       </div>
                     </div>
                   </td>
-                  <td >
-                    {toy.category_name}
-                    <br />
+                  <td>
+                    {/* {toy.category_name}
+                    <br /> */}
                     <span className="badge badge-ghost badge-sm">
-                      {toy.subcategory_name}
+                      {toy?.subcategory_name}
                     </span>
                   </td>
-                  <td>{toy.rating}</td>
+                  <td>${toy.price}</td>
+                  <td>{toy?.available_quantity}</td>
                   <th>
-                    <button className="btn btn-ghost btn-xs">details</button>
+                    <button className="btn  btn-ghost btn-xs"><Link to={`/toy/${toy?._id}`}>Details</Link></button>
                   </th>
                 </tr>
               </>
