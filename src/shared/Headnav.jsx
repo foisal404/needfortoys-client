@@ -19,7 +19,7 @@ const Headnav = () => {
     <>
       <li>
         <Link to="/">Home</Link>
-        <Link to="/">All Toys</Link>
+        <Link to="/toys">All Toys</Link>
         <Link to="/">Blogs</Link>
         {
           user&& <>
