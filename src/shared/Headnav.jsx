@@ -42,7 +42,7 @@ const Headnav = () => {
           <ul className="menu menu-horizontal px-1"> {links}</ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Get started</a>
+          <Link className="btn" to='/login'>Login</Link>
         </div>
       </div>
     </div>
