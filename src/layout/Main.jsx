@@ -1,11 +1,14 @@
+import { Outlet } from "react-router-dom";
 import Headnav from "../shared/Headnav";
+import Footer from "../shared/Footer";
 
 
 const Main = () => {
     return (
         <div>
             <Headnav></Headnav>
-            <h2>this is main toy layout</h2>
+            <Outlet></Outlet>
+            <Footer></Footer>
         </div>
     );
 };

@@ -5,10 +5,10 @@ import { RouterProvider } from "react-router-dom";
 import router from "./Route/Router.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <div>
+  <div className="2xl:container mx-auto">
     <React.StrictMode>
       <RouterProvider router={router} />
     </React.StrictMode>
-    ,
+    
   </div>
 );
