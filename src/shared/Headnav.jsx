@@ -3,8 +3,18 @@ import { Link } from "react-router-dom";
 import { authContext } from "../provider/Authprovider";
 
 const Headnav = () => {
-  const { user } = useContext(authContext);
+  const { user,logOut } = useContext(authContext);
   console.log(user && user);
+  //handle logout
+  const handleLogout=()=>{
+    logOut()
+    .then(()=>{
+      console.log("logout succesfully")
+    })
+    .catch(error=>{
+      console.error(error.message);
+    })
+  }
   const links = (
     <>
       <li>
@@ -55,13 +65,16 @@ const Headnav = () => {
         </div>
         <div className="navbar-end">
           {user ? (
-            <div className="tooltip tooltip tooltip-bottom" data-tip={`${user?.displayName}`}>
+            <>
+            <div className="tooltip  tooltip-bottom" data-tip={`${user?.displayName}`}>
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
                   <img src={user?.photoURL} />
                 </div>
               </label>
             </div>
+            <button className="btn btn-error sm:mx-5 sm:ms-9" onClick={handleLogout}>log out</button>
+            </>
           ) : (
             <Link className="btn" to="/login">
               Login
