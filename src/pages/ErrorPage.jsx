@@ -99,11 +99,12 @@ const ErrorPage = () => {
         </svg>
         <div className=" tracking-widest mt-4">
           <span className="text-gray-500 text-6xl block">
-            <span>4 0 4</span>
+            <span>{status}</span>
           </span>
           <span className="text-gray-500 text-xl">
-            Sorry, We couldn't find what you are looking for!
+            Sorry, We could not find what you are looking for!
           </span>
+          <p>{statusText}</p>
         </div>
       </center>
       <center className="mt-6">
