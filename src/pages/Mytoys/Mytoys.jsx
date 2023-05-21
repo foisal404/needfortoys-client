@@ -11,7 +11,7 @@ const Mytoys = () => {
         setToys(remaining)
     }
     useEffect(()=>{
-        fetch(`http://localhost:5000/toys?seller_email=${user?.email}`)
+        fetch(`https://mango-toys-server.vercel.app/toys?seller_email=${user?.email}`)
         .then(res=>res.json())
         .then(data=>setToys(data))
     },[])

@@ -16,10 +16,10 @@ const Home = () => {
       .then((data) => setToys(data));
   }, [url]);
   const catagoryload = (name) => {
-    setUrl(`http://localhost:5000/toys?category_name=${name}`);
+    setUrl(`https://mango-toys-server.vercel.app/toys?category_name=${name}`);
   };
   const subCatagoryload = (name) => {
-    setUrl(`http://localhost:5000/toys?subcategory_name=${name}`);
+    setUrl(`https://mango-toys-server.vercel.app/toys?subcategory_name=${name}`);
   };
   return (
     <div>

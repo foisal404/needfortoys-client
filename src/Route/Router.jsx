@@ -10,6 +10,7 @@ import Blog from "../pages/Blog/Blog";
 import AddToy from "../pages/AddToy/AddToy";
 import PrivateRoute from "./PrivateRoute";
 import Mytoys from "../pages/Mytoys/Mytoys";
+import ToyEdit from "../pages/Mytoys/ToyEdit";
 
 const router = createBrowserRouter([
     {
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
         {
             path:'/',
             element:<Home></Home>,
-            loader:()=>fetch('http://localhost:5000/categories')
+            loader:()=>fetch('https://mango-toys-server.vercel.app/categories')
         },
         {
             path:'/login',
@@ -33,12 +34,12 @@ const router = createBrowserRouter([
         {
           path:"/toys",
           element:<AllToys></AllToys>,
-          loader:()=> fetch('http://localhost:5000/toys')
+          loader:()=> fetch('https://mango-toys-server.vercel.app/toys')
         },
         {
           path:"/toy/:id",
           element:<ToyDetails></ToyDetails>,
-          loader:({params})=> fetch(`http://localhost:5000/toys/${params.id}`)
+          loader:({params})=> fetch(`https://mango-toys-server.vercel.app/toys/${params.id}`)
         },
         {
           path:'/blogs',
@@ -51,6 +52,11 @@ const router = createBrowserRouter([
         {
           path:"/mytoys",
           element:<PrivateRoute><Mytoys></Mytoys></PrivateRoute>,
+        },
+        {
+          path:'/edit/:id',
+          element:<PrivateRoute><ToyEdit></ToyEdit></PrivateRoute>,
+          loader:({params})=> fetch(`https://mango-toys-server.vercel.app/toys/${params.id}`)
         }
       ]
     },

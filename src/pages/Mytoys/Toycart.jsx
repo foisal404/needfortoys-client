@@ -1,11 +1,12 @@
 import Rating from "react-rating";
 import {  FaEdit, FaRegStar, FaRegTimesCircle, FaStar } from "react-icons/fa";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 const Toycart = ({ toy ,handleToys}) => {
   const { _id, name, picture, rating, details,price } = toy;
   const handleDelate=()=>{
     console.log(_id);
-    fetch(`http://localhost:5000/toys/${_id}`,{
+    fetch(`https://mango-toys-server.vercel.app/toys/${_id}`,{
         method:"DELETE"
     })
     .then(res=>res.json())
@@ -47,7 +48,7 @@ const Toycart = ({ toy ,handleToys}) => {
             </div>
           </div>
           <div className="card-actions flex flex-col">
-            <button className="btn btn-outline btn-ghost"><FaEdit/></button>
+          <Link to={`/edit/${_id}`}><button className="btn btn-outline btn-ghost"><FaEdit/></button></Link>
             <button className="btn btn-outline  btn-ghost" onClick={handleDelate}><FaRegTimesCircle/></button>
           </div>
         </div>
