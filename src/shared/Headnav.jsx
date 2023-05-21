@@ -3,30 +3,30 @@ import { Link } from "react-router-dom";
 import { authContext } from "../provider/Authprovider";
 
 const Headnav = () => {
-  const { user,logOut } = useContext(authContext);
+  const { user, logOut } = useContext(authContext);
   console.log(user && user);
   //handle logout
-  const handleLogout=()=>{
+  const handleLogout = () => {
     logOut()
-    .then(()=>{
-      console.log("logout succesfully")
-    })
-    .catch(error=>{
-      console.error(error.message);
-    })
-  }
+      .then(() => {
+        console.log("logout succesfully");
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+  };
   const links = (
     <>
       <li>
         <Link to="/">Home</Link>
         <Link to="/toys">All Toys</Link>
         <Link to="/">Blogs</Link>
-        {
-          user&& <>
-            <Link  to="/">My Toys </Link>
-            <Link  to="/">Add A Toy</Link>
+        {user && (
+          <>
+            <Link to="/">My Toys </Link>
+            <Link to="/">Add A Toy</Link>
           </>
-        }
+        )}
       </li>
     </>
   );
@@ -58,7 +58,8 @@ const Headnav = () => {
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+          <a className="btn btn-ghost normal-case text-xl">Need4Toys</a>
+            <a href=""><img src="../../src/assets/logo.png"  className="w-30 h-10"/></a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1"> {links}</ul>
@@ -66,14 +67,22 @@ const Headnav = () => {
         <div className="navbar-end">
           {user ? (
             <>
-            <div className="tooltip  tooltip-bottom" data-tip={`${user?.displayName}`}>
-              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                <div className="w-10 rounded-full">
-                  <img src={user?.photoURL} />
-                </div>
-              </label>
-            </div>
-            <button className="btn btn-error sm:mx-5 sm:ms-9" onClick={handleLogout}>log out</button>
+              <div
+                className="tooltip  tooltip-bottom"
+                data-tip={`${user?.displayName}`}
+              >
+                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                  <div className="w-10 rounded-full">
+                    <img src={user?.photoURL} />
+                  </div>
+                </label>
+              </div>
+              <button
+                className="btn btn-error sm:mx-5 sm:ms-9"
+                onClick={handleLogout}
+              >
+                log out
+              </button>
             </>
           ) : (
             <Link className="btn" to="/login">
