@@ -25,7 +25,9 @@ const Home = () => {
     <div>
       <Banner></Banner>
       <Gallery></Gallery>
-      <div className="text-center">
+      {/* category */}
+      <div className="text-center p-5 px-20">
+        <h2 className="p-10 lg:text-5xl text-3xl font-semibold">Shop by category</h2>
         <Tabs>
           <TabList>
             {loadcate.map((cat) => (
@@ -64,7 +66,7 @@ const Home = () => {
               </div>
             </TabPanel>
           ))}
-          <div>
+          <div className="grid grid-cols-3 gap-3 justify-items-center">
             {toys.map((toy) => (
               <Card key={toy._id} toy={toy}></Card>
             ))}
