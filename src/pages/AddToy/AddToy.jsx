@@ -105,6 +105,7 @@ const AddToy = () => {
                   type="text"
                   placeholder="Price"
                   name="price"
+                  defaultValue={'1046'}
                   className="input input-bordered"
                 />
               </div>
@@ -115,6 +116,7 @@ const AddToy = () => {
                 <input
                   type="text"
                   placeholder="rating"
+                  defaultValue={'4.3'}
                   name="rating"
                   className="input input-bordered"
                 />
@@ -140,6 +142,7 @@ const AddToy = () => {
                 <input
                   type="text"
                   placeholder="picture-Url"
+                  defaultValue={'https://www.bugatti.com/fileadmin/_processed_/sei/p1/se-image-8d7cf0a91bbc5d9b841ea0432a680245.jpg'}
                   name="picture"
                   className="input input-bordered"
                 />
