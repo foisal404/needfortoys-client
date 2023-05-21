@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { authContext } from "../../provider/Authprovider";
+import { toast } from "react-toastify";
 
 const AddToy = () => {
     const {user}=useContext(authContext)
@@ -24,6 +25,16 @@ const AddToy = () => {
         },
         body:JSON.stringify(addToy)
     })
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data);
+        if(data.acknowledged){
+            toast("ADD Toy sucessfully");
+        }
+        else{
+            toast("ADD Toy failed")
+        }
+    })
   };
   return (
       <div className=" bg-base-200">
@@ -40,7 +51,7 @@ const AddToy = () => {
                   type="text"
                   placeholder="name"
                   name="name"
-                  defaultValue={user?.name}
+                  defaultValue={'Bugati007'}
                   className="input input-bordered"
                 />
               </div>
@@ -50,7 +61,8 @@ const AddToy = () => {
                 </label>
                 <input
                   type="text"
-                  placeholder="seller_name Name"
+                  placeholder="seller_name "
+                  defaultValue={user?.displayName}
                   name="seller_name"
                   className="input input-bordered"
                 />
@@ -66,6 +78,7 @@ const AddToy = () => {
                   type="text"
                   placeholder="seller_email"
                   name="seller_email"
+                  defaultValue={user?.email}
                   className="input input-bordered"
                 />
               </div>
@@ -77,6 +90,7 @@ const AddToy = () => {
                   type="text"
                   placeholder="subcategory_name"
                   name="subcategory_name"
+                  defaultValue={"Formula_1_Car"}
                   className="input input-bordered"
                 />
               </div>
