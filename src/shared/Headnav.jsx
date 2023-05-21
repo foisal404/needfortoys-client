@@ -20,7 +20,7 @@ const Headnav = () => {
       <li>
         <Link to="/">Home</Link>
         <Link to="/toys">All Toys</Link>
-        <Link to="/">Blogs</Link>
+        <Link to="/blogs">Blogs</Link>
         {user && (
           <>
             <Link to="/">My Toys </Link>
