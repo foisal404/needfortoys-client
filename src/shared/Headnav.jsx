@@ -23,8 +23,8 @@ const Headnav = () => {
         <Link to="/blogs">Blogs</Link>
         {user && (
           <>
-            <Link to="/">My Toys </Link>
-            <Link to="/">Add A Toy</Link>
+            <Link to="/mytoys">My Toys </Link>
+            <Link to="/addtoy">Add A Toy</Link>
           </>
         )}
       </li>

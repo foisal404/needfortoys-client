@@ -14,7 +14,7 @@ const ToyDetails = () => {
     details,
     available_quantity,
     seller_name,
-    email,
+    seller_email,
   } = loader;
   return (
     <div>
@@ -30,7 +30,7 @@ const ToyDetails = () => {
             <p className="py-6">{details}</p>
             <div className="flex">
             <p>Seller  : "{seller_name} "  </p>
-            <p>{email ? email : "no email"}</p>
+            <p>{seller_email ? seller_email : "no seller_email"}</p>
             </div>
             <p>quantity :{available_quantity}</p>
             <p> price $ {price}</p>

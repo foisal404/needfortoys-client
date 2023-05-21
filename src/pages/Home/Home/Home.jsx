@@ -26,7 +26,7 @@ const Home = () => {
       <Banner></Banner>
       <Gallery></Gallery>
       {/* category */}
-      <div className="text-center p-5 px-20">
+      <div className="text-center p-10 pb-32 px-20">
         <h2 className="p-10 lg:text-5xl text-3xl font-semibold">Shop by category</h2>
         <Tabs>
           <TabList>
