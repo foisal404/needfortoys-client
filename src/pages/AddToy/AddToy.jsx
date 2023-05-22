@@ -38,10 +38,10 @@ const AddToy = () => {
   };
   return (
       <div className=" bg-base-200">
-        <h2 className="text-center text-4xl pt-5">ADD a Toy</h2>
+        <h2 className="text-center text-4xl pt-5 font-mono">ADD a Toy</h2>
       <div className="hero min-h-[90vh] ">
         <div className="hero-content   w-full">
-          <form className="card-body" onSubmit={handlerBtn}>
+          <form className="card-body px-32" onSubmit={handlerBtn}>
             <div className="flex gap-9">
               <div className="form-control w-1/2">
                 <label className="label">

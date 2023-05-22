@@ -52,7 +52,7 @@ const ToyEdit = () => {
       <h2 className="text-center text-4xl pt-5">Edit a Toy {loader.name}</h2>
       <div className="hero min-h-[90vh] ">
         <div className="hero-content   w-full">
-          <form className="card-body" onSubmit={handlerBtn}>
+          <form className="card-body px-32" onSubmit={handlerBtn}>
             <div className="flex gap-9">
               <div className="form-control w-1/2">
                 <label className="label">
