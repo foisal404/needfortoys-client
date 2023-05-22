@@ -6,6 +6,7 @@ import "react-tabs/style/react-tabs.css";
 import { useEffect, useState } from "react";
 import Card from "./Card";
 import Brands from "../Brands/Brands";
+import Services from "../Services/Services";
 
 const Home = () => {
   const loadcate = useLoaderData();
@@ -74,7 +75,8 @@ const Home = () => {
           </div>
         </Tabs>
       </div>
-      {/* extra section  */}
+      {/* extra sections  */}
+      <Services></Services>
       <Brands></Brands>
     </div>
   );
