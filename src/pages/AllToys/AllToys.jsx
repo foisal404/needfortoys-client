@@ -21,17 +21,17 @@ const AllToys = () => {
           </thead>
           <tbody>
             {toys.map((toy) => (
-              <>
+              
                 <tr key={toy._id}>
                   <td>
-                    <div className="flex items-center space-x-3">
+                    <span className="flex items-center space-x-3">
                       
-                      <div className="hidden md:block">
-                        <div className="font-bold">{toy?.name }</div>
-                        <div >Seller :{toy?.seller_name && toy?.seller_name }</div>
-                        <div className="text-sm opacity-50"></div>
-                      </div>
-                    </div>
+                      <span className="hidden md:block">
+                        <span className="font-bold">{toy?.name }</span>
+                        <span >Seller :{toy?.seller_name && toy?.seller_name }</span>
+                        <span className="text-sm opacity-50"></span>
+                      </span>
+                    </span>
                   </td>
                   <td>
                     {/* {toy.category_name}
@@ -46,7 +46,7 @@ const AllToys = () => {
                     <button className="btn  btn-ghost btn-xs"><Link to={`/toy/${toy?._id}`}>Details</Link></button>
                   </th>
                 </tr>
-              </>
+            
             ))}
           </tbody>
         </table>
