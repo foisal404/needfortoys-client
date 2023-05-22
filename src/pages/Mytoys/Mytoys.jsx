@@ -16,8 +16,8 @@ const Mytoys = () => {
         .then(data=>setToys(data))
     },[])
     return (
-        <div className="p-5 grid grid-cols-1 gap-5">
-            <h2 className="text-center text-4xl py-5">My Toys</h2>
+        <div className="p-5  px-24 grid grid-cols-1 gap-5">
+            <h2 className="text-center text-4xl py-5 font-bold font-serif">My Toys</h2>
             {
                 toys.map(toy=><Toycart key={toy._id} toy={toy} handleToys={handleToys}></Toycart>)
             }

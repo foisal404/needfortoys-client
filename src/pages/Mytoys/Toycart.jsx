@@ -3,7 +3,7 @@ import {  FaEdit, FaRegStar, FaRegTimesCircle, FaStar } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 const Toycart = ({ toy ,handleToys}) => {
-  const { _id, name, picture, rating, details,price } = toy;
+  const { _id, name, picture, rating, details,price,available_quantity } = toy;
   const handleDelate=()=>{
     // console.log(_id);
     fetch(`https://mango-toys-server.vercel.app/toys/${_id}`,{
@@ -32,9 +32,11 @@ const Toycart = ({ toy ,handleToys}) => {
         </div>
         <div className="card-body flex flex-row items-center">
           <div className="flex-grow">
-            <h2 className="card-title">{name}</h2>
-            <h2 >$ {price}</h2>
-            <p>{details}</p>
+            <h2 className="card-title text-3xl font-bold my-3">{name}</h2>
+            <h2 ><span className="border rounded-md border-zinc-950 px-3">$ {price}</span>{
+              available_quantity&& <span className="border rounded-md border-zinc-950 px-3 ml-3">{available_quantity}</span>
+            }</h2>
+            <p className="text-sm">{details}</p>
             <div className="flex">
               <Rating
                 placeholderRating={rating}
@@ -44,12 +46,12 @@ const Toycart = ({ toy ,handleToys}) => {
                 fullSymbol={<FaStar />}
                 readonly
               />
-              <p>{rating}</p>
+              <p className="ml-2">{rating}</p>
             </div>
           </div>
           <div className="card-actions flex flex-col">
-          <Link to={`/edit/${_id}`}><button className="btn btn-outline btn-ghost"><FaEdit/></button></Link>
-            <button className="btn btn-outline  btn-ghost" onClick={handleDelate}><FaRegTimesCircle/></button>
+          <Link to={`/edit/${_id}`}><button className="btn btn-ghost"><FaEdit className="text-xl text-cyan-500"/></button></Link>
+            <button className="btn  btn-ghost" onClick={handleDelate}><FaRegTimesCircle className="text-xl text-red-500"/></button>
           </div>
         </div>
       </div>
