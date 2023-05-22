@@ -4,7 +4,7 @@ import { Link, useLoaderData } from "react-router-dom";
 const AllToys = () => {
   const loader = useLoaderData();
   const [toys, setToys] = useState(loader.slice(0, 20));
-  console.log(loader);
+  // console.log(loader);
   return (
     <div>
       <div className="overflow-x-auto w-full p-5 px-10">

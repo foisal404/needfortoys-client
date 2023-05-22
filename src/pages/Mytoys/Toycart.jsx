@@ -5,15 +5,15 @@ import { Link } from "react-router-dom";
 const Toycart = ({ toy ,handleToys}) => {
   const { _id, name, picture, rating, details,price } = toy;
   const handleDelate=()=>{
-    console.log(_id);
+    // console.log(_id);
     fetch(`https://mango-toys-server.vercel.app/toys/${_id}`,{
         method:"DELETE"
     })
     .then(res=>res.json())
     .then(data=>{
-        console.log(data);
+        // console.log(data);
         if(data.deletedCount>0){
-            toast("delate succesfully")
+            toast("delete succesfully")
             handleToys(_id);
 
         }

@@ -17,7 +17,7 @@ const AddToy = () => {
     const details=form.details.value;
     const picture=form.picture.value;
     const addToy={name,seller_name,seller_email,subcategory_name,picture,price,rating,available_quantity,details}
-    console.log(addToy);
+    // console.log(addToy);
     fetch('https://mango-toys-server.vercel.app/toys',{
         method:"POST",
         headers:{
@@ -27,7 +27,7 @@ const AddToy = () => {
     })
     .then(res=>res.json())
     .then(data=>{
-        console.log(data);
+        // console.log(data);
         if(data.acknowledged){
             toast("ADD Toy sucessfully");
         }
@@ -90,7 +90,7 @@ const AddToy = () => {
                   type="text"
                   placeholder="subcategory_name"
                   name="subcategory_name"
-                  defaultValue={"Formula_1_Car"}
+                  defaultValue={"Formula_1_Cars"}
                   className="input input-bordered"
                 />
               </div>

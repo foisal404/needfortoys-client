@@ -1,11 +1,11 @@
-import { useContext } from "react";
-import { authContext } from "../../provider/Authprovider";
+// import { useContext } from "react";
+// import { authContext } from "../../provider/Authprovider";
 import { useLoaderData } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const ToyEdit = () => {
   const loader = useLoaderData();
-  const { user } = useContext(authContext);
+  // const { user } = useContext(authContext);
   const handlerBtn = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -29,7 +29,7 @@ const ToyEdit = () => {
       available_quantity,
       details,
     };
-    console.log(addToy);
+    // console.log(addToy);
 
     fetch(`https://mango-toys-server.vercel.app/toys/${loader._id}`,{
         method:"PATCH",
@@ -40,13 +40,13 @@ const ToyEdit = () => {
     })
     .then(res=> res.json())
     .then(data=>{
-        console.log(data);
+        // console.log(data);
         if(data.modifiedCount>0){
             toast('Updated succesfully')
         }
     })
   };
-  console.log(loader);
+  // console.log(loader);
   return (
     <div className=" bg-base-200">
       <h2 className="text-center text-4xl pt-5">Edit a Toy {loader.name}</h2>

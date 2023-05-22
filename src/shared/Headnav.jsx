@@ -4,12 +4,12 @@ import { authContext } from "../provider/Authprovider";
 
 const Headnav = () => {
   const { user, logOut } = useContext(authContext);
-  console.log(user && user);
+  // console.log(user && user);
   //handle logout
   const handleLogout = () => {
     logOut()
       .then(() => {
-        console.log("logout succesfully");
+        // console.log("logout succesfully");
       })
       .catch((error) => {
         console.error(error.message);

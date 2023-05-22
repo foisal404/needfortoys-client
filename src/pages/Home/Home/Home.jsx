@@ -9,7 +9,7 @@ import Card from "./Card";
 const Home = () => {
   const loadcate = useLoaderData();
   const [toys, setToys] = useState([]);
-  const [url, setUrl] = useState("");
+  const [url, setUrl] = useState(`https://mango-toys-server.vercel.app/toys?category_name`);
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -31,7 +31,7 @@ const Home = () => {
         <Tabs>
           <TabList>
             {loadcate.map((cat) => (
-              <Tab key={cat.key}>
+              <Tab key={cat._id}>
                 <a onClick={() => catagoryload(cat.name)}>{cat.name}</a>
               </Tab>
             ))}

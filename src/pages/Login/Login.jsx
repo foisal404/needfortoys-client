@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { authContext } from "../../provider/Authprovider";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const { GoogleUp,signIn } = useContext(authContext);
@@ -20,16 +21,18 @@ const Login = () => {
       setError("Password must be 6 character")
       return;
     }
-    console.log(email, password);
+    // console.log(email, password);
     signIn(email,password)
     .then(result=>{
       const loggeduser=result.user;
-      console.log(loggeduser)
+      // console.log(loggeduser)
+      toast(`${loggeduser?.displayName} login!`)
     })
     .catch(error=>{
       const message=error.message.slice(22,38);
       console.error(message);
       setError(message);
+      toast(`${message}`)
     })
   };
   //Google popup
