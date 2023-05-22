@@ -5,7 +5,7 @@ const Card = ({ toy }) => {
   const { _id, name, picture, price, rating } = toy;
   return (
     <div>
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="card w-80 bg-base-100 shadow-xl">
         <figure>
           <img src={picture} alt="Shoes" className="h-48 w-full p-5" />
         </figure>

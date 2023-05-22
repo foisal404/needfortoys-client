@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { authContext } from "../provider/Authprovider";
 import logo from '../../src/assets/logo.png'
+import { FaSignOutAlt } from "react-icons/fa";
 
 const Headnav = () => {
   const { user, logOut } = useContext(authContext);
@@ -32,8 +33,8 @@ const Headnav = () => {
     </>
   );
   return (
-    <div>
-      <div className="navbar bg-neutral text-neutral-content">
+    <>
+      <nav className="navbar bg-cyan-600 sticky top-0  z-10 text-neutral-content">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -79,10 +80,10 @@ const Headnav = () => {
                 </label>
               </div>
               <button
-                className="btn btn-error sm:mx-5 sm:ms-9"
+                className="btn btn-outline btn-error border-0 sm:mx-5 sm:ms-9 lowercase border-1  rounded-sm px-5"
                 onClick={handleLogout}
               >
-                log out
+                <FaSignOutAlt/> log out
               </button>
             </>
           ) : (
@@ -91,8 +92,8 @@ const Headnav = () => {
             </Link>
           )}
         </div>
-      </div>
-    </div>
+      </nav>
+    </>
   );
 };
 

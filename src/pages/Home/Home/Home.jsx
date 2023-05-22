@@ -32,7 +32,7 @@ const Home = () => {
           <TabList>
             {loadcate.map((cat) => (
               <Tab key={cat._id}>
-                <a onClick={() => catagoryload(cat.name)}>{cat.name}</a>
+                <a onClick={() => catagoryload(cat.name)} >{cat.name}</a>
               </Tab>
             ))}
           </TabList>
@@ -40,25 +40,25 @@ const Home = () => {
             <TabPanel key={cat._id}>
               <div className="tabs flex justify-center">
                 <button
-                  className="tab "
+                  className="tab bg-slate-200 mx-2 rounded-lg "
                   onClick={() => subCatagoryload(`${cat.subcategories[0]}`)}
                 >
                   {cat.subcategories[0]}
                 </button>
                 <button
-                  className="tab "
+                  className="tab bg-slate-200 mx-2 rounded-lg "
                   onClick={() => subCatagoryload(`${cat.subcategories[1]}`)}
                 >
                   {cat.subcategories[1]}
                 </button>
                 <button
-                  className="tab "
+                  className="tab bg-slate-200 mx-2 rounded-lg "
                   onClick={() => subCatagoryload(`${cat.subcategories[2]}`)}
                 >
                   {cat.subcategories[2]}
                 </button>
                 <button
-                  className="tab "
+                  className="tab bg-slate-200 mx-2 rounded-lg "
                   onClick={() => subCatagoryload(`${cat.subcategories[3]}`)}
                 >
                   {cat.subcategories[3]}
@@ -66,7 +66,7 @@ const Home = () => {
               </div>
             </TabPanel>
           ))}
-          <div className="grid grid-cols-3 gap-3 justify-items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 justify-items-center">
             {toys.map((toy) => (
               <Card key={toy._id} toy={toy}></Card>
             ))}

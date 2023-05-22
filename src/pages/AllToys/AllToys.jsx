@@ -11,8 +11,8 @@ const AllToys = () => {
         <table className="table w-full">
           {/* head */}
           <thead>
-            <tr>
-              <th>About</th>
+            <tr  className="relative z-0" >
+              <th className="z-0" >About</th>
               <th>Sub-category</th>
               <th>Price</th>
               <th>Available Quantity</th>

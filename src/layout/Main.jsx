@@ -4,8 +4,8 @@ import Footer from "../shared/Footer";
 
 const Main = () => {
   return (
-    <div>
-      <Headnav></Headnav>
+    <div className="relative">
+      <Headnav ></Headnav>
       <section className="min-h-[86vh]">
         <Outlet></Outlet>
       </section>
