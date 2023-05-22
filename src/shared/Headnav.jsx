@@ -61,7 +61,7 @@ const Headnav = () => {
             </ul>
           </div>
           <Link to='/' className="btn btn-ghost normal-case text-xl">Need4Toys</Link>
-            <Link to='/'><img src={logo}  className="w-30 h-10 none md:block"/></Link>
+            <Link to='/'><img src={logo}  className="w-30 h-10 hidden md:block"/></Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1"> {links}</ul>
@@ -80,7 +80,7 @@ const Headnav = () => {
                 </label>
               </div>
               <button
-                className="btn btn-outline btn-error border-0 sm:mx-5 sm:ms-9 lowercase border-1  rounded-sm px-5"
+                className="btn  sm:mx-5 sm:ms-9 lowercase border-1  px-5"
                 onClick={handleLogout}
               >
                 <FaSignOutAlt/> log out

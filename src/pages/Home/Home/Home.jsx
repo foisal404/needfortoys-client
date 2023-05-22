@@ -40,25 +40,25 @@ const Home = () => {
             <TabPanel key={cat._id}>
               <div className="tabs flex justify-center">
                 <button
-                  className="tab bg-slate-200 mx-2 rounded-lg "
+                  className="tab bg-slate-200 m-2 rounded-lg "
                   onClick={() => subCatagoryload(`${cat.subcategories[0]}`)}
                 >
                   {cat.subcategories[0]}
                 </button>
                 <button
-                  className="tab bg-slate-200 mx-2 rounded-lg "
+                  className="tab bg-slate-200 m-2 rounded-lg "
                   onClick={() => subCatagoryload(`${cat.subcategories[1]}`)}
                 >
                   {cat.subcategories[1]}
                 </button>
                 <button
-                  className="tab bg-slate-200 mx-2 rounded-lg "
+                  className="tab bg-slate-200 m-2 rounded-lg "
                   onClick={() => subCatagoryload(`${cat.subcategories[2]}`)}
                 >
                   {cat.subcategories[2]}
                 </button>
                 <button
-                  className="tab bg-slate-200 mx-2 rounded-lg "
+                  className="tab bg-slate-200 m-2 rounded-lg "
                   onClick={() => subCatagoryload(`${cat.subcategories[3]}`)}
                 >
                   {cat.subcategories[3]}
