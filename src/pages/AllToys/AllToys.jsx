@@ -80,7 +80,7 @@ const AllToys = () => {
       <div className="text-center py-5">
         <button
           onClick={() => setToys(loader)}
-          className="btn btn-outline btn-error"
+          className="btn btn-outline btn-success px-8"
         >
           All toys
         </button>

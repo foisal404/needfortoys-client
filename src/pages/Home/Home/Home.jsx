@@ -5,6 +5,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { useEffect, useState } from "react";
 import Card from "./Card";
+import Brands from "../Brands/Brands";
 
 const Home = () => {
   const loadcate = useLoaderData();
@@ -26,8 +27,8 @@ const Home = () => {
       <Banner></Banner>
       <Gallery></Gallery>
       {/* category */}
-      <div className="text-center p-10 pb-32 px-20">
-        <h2 className="p-10 lg:text-5xl text-3xl font-semibold">Shop by category</h2>
+      <div className="text-center p-10 pb-32 md:px-20">
+        <h2 className="md:p-10 p-5 lg:text-5xl text-3xl font-semibold">Shop by category</h2>
         <Tabs>
           <TabList>
             {loadcate.map((cat) => (
@@ -73,6 +74,8 @@ const Home = () => {
           </div>
         </Tabs>
       </div>
+      {/* extra section  */}
+      <Brands></Brands>
     </div>
   );
 };
