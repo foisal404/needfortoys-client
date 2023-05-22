@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { authContext } from "../provider/Authprovider";
+import logo from '../../src/assets/logo.png'
 
 const Headnav = () => {
   const { user, logOut } = useContext(authContext);
@@ -58,8 +59,8 @@ const Headnav = () => {
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">Need4Toys</a>
-            <a href=""><img src="../../src/assets/logo.png"  className="w-30 h-10"/></a>
+          <Link to='/' className="btn btn-ghost normal-case text-xl">Need4Toys</Link>
+            <Link to='/'><img src={logo}  className="w-30 h-10 none md:block"/></Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1"> {links}</ul>
