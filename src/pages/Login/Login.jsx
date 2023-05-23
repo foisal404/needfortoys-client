@@ -1,9 +1,13 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { authContext } from "../../provider/Authprovider";
 import { toast } from "react-toastify";
 
 const Login = () => {
+  const location=useLocation();
+  const navigate=useNavigate();
+  const from =location.state?.from?.pathname || "/";
+
   const { GoogleUp,signIn } = useContext(authContext);
   const [error,setError]=useState("")
   //form control
@@ -27,6 +31,7 @@ const Login = () => {
       const loggeduser=result.user;
       // console.log(loggeduser)
       toast(`${loggeduser?.displayName} login!`)
+      navigate(from, { replace: true });
     })
     .catch(error=>{
       const message=error.message.slice(22,38);
