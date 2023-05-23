@@ -4,7 +4,7 @@ import Footer from "../shared/Footer";
 
 const Main = () => {
   return (
-    <div className="relative"  data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">
+    <div className="relative"  >
       <Headnav ></Headnav>
       <section className="min-h-[86vh]">
         <Outlet></Outlet>

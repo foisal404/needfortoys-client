@@ -6,7 +6,7 @@ import router from "./Route/Router.jsx";
 import Authprovider from "./provider/Authprovider";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-<script src="bower_components/aos/dist/aos.js"></script> 
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <div className="2xl:container mx-auto">

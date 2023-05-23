@@ -76,7 +76,7 @@ const Home = () => {
         </Tabs>
       </div>
       {/* extra sections  */}
-      <Services></Services>
+      <Services ></Services>
       <Brands></Brands>
     </div>
   );
