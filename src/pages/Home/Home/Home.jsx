@@ -7,8 +7,10 @@ import { useEffect, useState } from "react";
 import Card from "./Card";
 import Brands from "../Brands/Brands";
 import Services from "../Services/Services";
+import useTitle from "../../../customHook/usetitle";
 
 const Home = () => {
+  useTitle('')
   const loadcate = useLoaderData();
   const [toys, setToys] = useState([]);
   const [url, setUrl] = useState(`https://mango-toys-server.vercel.app/toys?category_name`);

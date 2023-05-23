@@ -1,9 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { authContext } from "../../provider/Authprovider";
 import Toycart from "./Toycart";
+import useTitle from "../../customHook/usetitle";
 
 
 const Mytoys = () => {
+    useTitle("My Toys")
     const {user}=useContext(authContext)
     const [toys,setToys]=useState([])
     const handleToys=(id)=>{

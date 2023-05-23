@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { authContext } from "../../provider/Authprovider";
 import { toast } from "react-toastify";
+import useTitle from "../../customHook/usetitle";
 
 const AddToy = () => {
+  useTitle("ADD Toys")
     const {user}=useContext(authContext)
   const handlerBtn = (event) => {
     event.preventDefault();

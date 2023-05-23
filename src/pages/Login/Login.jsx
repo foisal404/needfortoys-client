@@ -2,8 +2,10 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { authContext } from "../../provider/Authprovider";
 import { toast } from "react-toastify";
+import useTitle from "../../customHook/usetitle";
 
 const Login = () => {
+  useTitle("login")
   const location=useLocation();
   const navigate=useNavigate();
   const from =location.state?.from?.pathname || "/";

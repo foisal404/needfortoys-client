@@ -1,9 +1,11 @@
 import { useRef, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { Link, useLoaderData } from "react-router-dom";
+import useTitle from "../../customHook/usetitle";
 
 const AllToys = () => {
   const loader = useLoaderData();
+  useTitle("All Toys")
   const [toys, setToys] = useState(loader.slice(0, 20));
   const inputref = useRef(null)
   function handleClick() {
@@ -13,6 +15,7 @@ const AllToys = () => {
     .then(data=>setToys(data))
   }
   // console.log(loader);
+
   return (
     <div>
       <div className="overflow-x-auto w-full p-5 px-10">

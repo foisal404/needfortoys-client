@@ -1,8 +1,10 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { authContext } from "../../provider/Authprovider";
+import useTitle from "../../customHook/usetitle";
 
 const SignUp = () => {
+  useTitle('SignUp')
   const [error, setError] = useState("");
   const { GoogleUp, signUp, updateUser } = useContext(authContext);
   //form control

@@ -2,8 +2,10 @@
 // import { authContext } from "../../provider/Authprovider";
 import { useLoaderData } from "react-router-dom";
 import { toast } from "react-toastify";
+import useTitle from "../../customHook/usetitle";
 
 const ToyEdit = () => {
+  useTitle("Edit Toy")
   const loader = useLoaderData();
   // const { user } = useContext(authContext);
   const handlerBtn = (event) => {
