@@ -13,7 +13,7 @@ const Home = () => {
   useTitle('')
   const loadcate = useLoaderData();
   const [toys, setToys] = useState([]);
-  const [url, setUrl] = useState(`https://mango-toys-server.vercel.app/toys?category_name`);
+  const [url, setUrl] = useState(`https://mango-toys-server.vercel.app/toys?subcategory_name=Monster_Trucks`);
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -23,8 +23,10 @@ const Home = () => {
     setUrl(`https://mango-toys-server.vercel.app/toys?category_name=${name}`);
   };
   const subCatagoryload = (name) => {
+    console.log(name);
     setUrl(`https://mango-toys-server.vercel.app/toys?subcategory_name=${name}`);
   };
+  console.log(url);
   return (
     <div>
       <Banner></Banner>
@@ -70,7 +72,7 @@ const Home = () => {
               </div>
             </TabPanel>
           ))}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 justify-items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 justify-items-center px-40">
             {toys.map((toy) => (
               <Card key={toy._id} toy={toy}></Card>
             ))}

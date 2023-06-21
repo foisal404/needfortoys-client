@@ -1,7 +1,7 @@
 const Gallery = () => {
   return (
     <section className="pt-6 pb-16">
-      <h2 className="text-center lg:text-5xl text-3xl py-3">
+      <h2 className="text-center lg:text-5xl text-3xl py-5 pb-8 font-semibold">
         Fuel Your Imagination !
       </h2>
       <div className="w-[80%] mx-auto grid grid-cols-3 lg:grid-cols-6 ">

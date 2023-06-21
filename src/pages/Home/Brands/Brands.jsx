@@ -9,7 +9,7 @@ import mega from '../../../assets//mega.png'
 
 const Brands = () => {
   return (
-    <div className="py-5">
+    <div className="py-10 pb-20">
         <h2 className=" text-center md:p-10 p-5 lg:text-5xl text-3xl font-semibold">Our Brands</h2>
       <Marquee>
         <img src={lego} className="h-32 mx-5" />

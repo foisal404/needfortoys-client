@@ -18,7 +18,7 @@ const AllToys = () => {
 
   return (
     <div>
-      <div className="overflow-x-auto w-full p-5 px-10">
+      <div className="overflow-x-auto w-full p-10 px-32">
         <div className="flex justify-between">
           <h2 className="text-3xl font-mono">All Toys</h2>
           <div className="pb-4">
@@ -36,7 +36,7 @@ const AllToys = () => {
             <button className="btn mx-2">high price</button>
           </div>
         </div>
-        <table className="table w-full">
+        <table className="table px-10 w-full ">
           {/* head */}
           <thead>
             <tr className="relative z-0">

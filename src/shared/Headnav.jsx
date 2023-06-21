@@ -33,8 +33,8 @@ const Headnav = () => {
     </>
   );
   return (
-    <>
-      <nav className="navbar bg-cyan-600 sticky top-0  z-10 text-neutral-content">
+    <div className="lg:px-1  sticky top-0  z-10">
+      <nav className="navbar rounded-md bg-slate-800  text-neutral-content ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -87,13 +87,13 @@ const Headnav = () => {
               </button>
             </>
           ) : (
-            <Link className="btn" to="/login">
+            <Link className="btn btn-ghost" to="/login">
               Login
             </Link>
           )}
         </div>
       </nav>
-    </>
+    </div>
   );
 };
 
