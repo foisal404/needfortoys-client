@@ -10,7 +10,7 @@ import Services from "../Services/Services";
 import useTitle from "../../../customHook/usetitle";
 
 const Home = () => {
-  useTitle('')
+  useTitle('Home')
   const loadcate = useLoaderData();
   const [toys, setToys] = useState([]);
   const [url, setUrl] = useState(`https://mango-toys-server.vercel.app/toys?subcategory_name=Monster_Trucks`);
@@ -32,7 +32,7 @@ const Home = () => {
       <Banner></Banner>
       <Gallery></Gallery>
       {/* category */}
-      <div className="text-center p-10 pb-32 md:px-20">
+      <div className="text-center p-10 pb-32 md:px-20"  data-aos="fade-right">
         <h2 className="md:p-10 p-5 lg:text-5xl text-3xl font-semibold">Shop by category</h2>
         <Tabs>
           <TabList>
@@ -46,25 +46,25 @@ const Home = () => {
             <TabPanel key={cat._id}>
               <div className="tabs flex justify-center">
                 <button
-                  className="tab bg-slate-200 m-2 rounded-lg "
+                  className="tab text-black bg-slate-200 m-2 rounded-lg "
                   onClick={() => subCatagoryload(`${cat.subcategories[0]}`)}
                 >
                   {cat.subcategories[0]}
                 </button>
                 <button
-                  className="tab bg-slate-200 m-2 rounded-lg "
+                  className="tab text-black bg-slate-200 m-2 rounded-lg "
                   onClick={() => subCatagoryload(`${cat.subcategories[1]}`)}
                 >
                   {cat.subcategories[1]}
                 </button>
                 <button
-                  className="tab bg-slate-200 m-2 rounded-lg "
+                  className="tab text-black bg-slate-200 m-2 rounded-lg "
                   onClick={() => subCatagoryload(`${cat.subcategories[2]}`)}
                 >
                   {cat.subcategories[2]}
                 </button>
                 <button
-                  className="tab bg-slate-200 m-2 rounded-lg "
+                  className="tab text-black bg-slate-200 m-2 rounded-lg "
                   onClick={() => subCatagoryload(`${cat.subcategories[3]}`)}
                 >
                   {cat.subcategories[3]}

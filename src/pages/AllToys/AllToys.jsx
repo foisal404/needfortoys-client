@@ -18,7 +18,7 @@ const AllToys = () => {
 
   return (
     <div>
-      <div className="overflow-x-auto w-full p-10 px-32">
+      <div className="overflow-x-auto w-full p-10 px-52">
         <div className="flex justify-between">
           <h2 className="text-3xl font-mono">All Toys</h2>
           <div className="pb-4">
@@ -40,10 +40,11 @@ const AllToys = () => {
           {/* head */}
           <thead>
             <tr className="relative z-0">
-              <th className="z-0">About</th>
+              <th className="z-0">Toy Name</th>
+              <th >Saller</th>
               <th>Sub-category</th>
               <th>Price</th>
-              <th>Available Quantity</th>
+              <th>Quantity</th>
               <th>details</th>
             </tr>
           </thead>
@@ -51,27 +52,30 @@ const AllToys = () => {
             {toys.map((toy) => (
               <tr key={toy._id}>
                 <td>
+                  <span className="font-bold">{toy?.name}</span>
+                </td>
+                <td>
                   <span className="flex items-center space-x-3">
                     <span className="hidden md:block">
-                      <span className="font-bold">{toy?.name}</span>
-                      <span className="ml-5">
-                        Seller :{toy?.seller_name && toy?.seller_name}
-                      </span>
+                      
+                        {toy?.seller_name && toy?.seller_name}
+                      
                       <span className="text-sm opacity-50"></span>
                     </span>
                   </span>
                 </td>
+                
                 <td>
                   {/* {toy.category_name}
                     <br /> */}
-                  <span className="badge badge-ghost badge-sm">
+                  <span className="badge badge-ghost ">
                     {toy?.subcategory_name}
                   </span>
                 </td>
-                <td>${toy.price}</td>
+                <td className="text-green-600">${toy.price}</td>
                 <td>{toy?.available_quantity}</td>
                 <th>
-                  <button className="btn  btn-ghost btn-xs">
+                  <button className="btn  bg-red-600 rounded-none btn-xs">
                     <Link to={`/toy/${toy?._id}`}>Details</Link>
                   </button>
                 </th>

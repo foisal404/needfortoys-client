@@ -7,11 +7,11 @@ const Card = ({ toy }) => {
     <div>
       <div className="card w-80 bg-base-100 shadow-xl">
         <figure>
-          <img src={picture} alt="Shoes" className="h-48 w-full p-5" />
+          <img src={picture} alt="car" className="h-48 w-full p-5" />
         </figure>
         <div className="card-body text-left">
           <h2 className="card-title">{name}</h2>
-          <p>$ {price}</p>
+          <p className="text-lg"><span className="text-green-600">$</span>{price}</p>
           <div className="flex">
             <Rating
               placeholderRating={rating}
@@ -22,8 +22,8 @@ const Card = ({ toy }) => {
             />
             <p className="mx-4">{rating}</p>
           </div>
-          <div className="card-actions justify-start">
-          <button className="btn  btn-error"><Link to={`/toy/${_id}`}>Details</Link></button>
+          <div className="card-actions justify-center">
+          <button className="btn w-full rounded-none bg-red-600" ><Link to={`/toy/${_id}`}>Details</Link></button>
           </div>
         </div>
       </div>

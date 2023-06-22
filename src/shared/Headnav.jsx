@@ -20,21 +20,21 @@ const Headnav = () => {
   const links = (
     <>
       <li>
-        <Link to="/">Home</Link>
-        <Link to="/toys">All Toys</Link>
-        <Link to="/blogs">Blogs</Link>
+        <Link className="hover:text-yellow-500" to="/">Home</Link>
+        <Link className="hover:text-yellow-500" to="/toys">All Toys</Link>
+        <Link className="hover:text-yellow-500" to="/blogs">Blogs</Link>
         {user && (
           <>
-            <Link to="/mytoys">My Toys </Link>
-            <Link to="/addtoy">Add A Toy</Link>
+            <Link className="hover:text-yellow-500" to="/mytoys">My Toys </Link>
+            <Link className="hover:text-yellow-500" to="/addtoy">Add A Toy</Link>
           </>
         )}
       </li>
     </>
   );
   return (
-    <div className="lg:px-1  sticky top-0  z-10">
-      <nav className="navbar rounded-md bg-slate-800  text-neutral-content ">
+    <>
+      <nav className="navbar bg-slate-800  text-neutral-content ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -80,20 +80,20 @@ const Headnav = () => {
                 </label>
               </div>
               <button
-                className="btn  sm:mx-5 sm:ms-9 lowercase border-1  px-5"
+                className="btn  sm:mx-5 sm:ms-9 lowercase border-1  px-5 hover:text-yellow-500"
                 onClick={handleLogout}
               >
                 <FaSignOutAlt/> log out
               </button>
             </>
           ) : (
-            <Link className="btn btn-ghost" to="/login">
+            <Link className="btn btn-ghost hover:text-yellow-500" to="/login">
               Login
             </Link>
           )}
         </div>
       </nav>
-    </div>
+    </>
   );
 };
 
